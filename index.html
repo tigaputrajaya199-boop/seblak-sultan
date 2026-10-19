@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seblak UMKM - Profil Usaha & Menu Kuliner Pedas Gurih Singosari</title>
+    <meta name="description" content="Website profil UMKM Seblak Prasmanan & Pedas Gurih Khas Singosari. Pilihan topping lengkap, rempah cikur asli, dan harga ramah kantong." />
+    <meta property="og:title" content="Seblak UMKM - Pedasnya Pas, Gurihnya Bikin Nagih" />
+    <meta property="og:description" content="Katalog menu seblak prasmanan komplit, pemesanan via WhatsApp, dan lokasi warung Seblak UMKM Singosari." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- File Gaya Tampilan Utama (CSS Murni) -->
+    <link rel="stylesheet" href="/style.css" />
+  <script src="/_aistudio-iframe.js?v=6634132a"></script></head>
+  <body>
+    <!-- ====================================================================
+         1. BANNER PENGUMUMAN / PROMO SPESIAL (Bisa diatur dari Admin)
+         ==================================================================== -->
+    <div id="promo-banner" class="promo-banner" role="alert">
+      <span class="promo-badge">PROMO</span>
+      <span id="promo-teks">Promo Pelajar &amp; Mahasiswa: Beli 2 Porsi Gratis Minuman Segar!</span>
+    </div>
+
+    <!-- ====================================================================
+         2. HEADER & NAVIGASI WEBSITE (RESPONSIF HP & LAPTOP)
+         ==================================================================== -->
+    <header class="header-utama">
+      <div class="container header-wrapper">
+        <!-- Logo & Nama Usaha UMKM -->
+        <a href="#beranda" class="logo-brand" title="Kembali ke Beranda">
+          <img 
+            id="brand-logo-img" 
+            class="logo-img" 
+            src="/img/logo.svg" 
+            alt="Logo Resmi Seblak UMKM" 
+          />
+          <div class="brand-text">
+            <h1 id="brand-nama-teks">Seblak UMKM</h1>
+            <span id="brand-slogan-header" class="brand-subtitle">Khas Singosari</span>
+          </div>
+        </a>
+
+        <!-- Menu Navigasi Desktop -->
+        <nav class="nav-desktop" aria-label="Navigasi Utama">
+          <a href="#beranda" class="nav-link">Beranda</a>
+          <a href="#tentang" class="nav-link">Tentang</a>
+          <a href="#produk" class="nav-link">Produk</a>
+          <a href="#kontak" class="nav-link">Kontak</a>
+          <!-- Tombol Akses Cepat ke Jendela 2 (Panel Admin) -->
+          <a href="admin.html" class="btn-kelola-header" title="Buka Panel Admin / Pengaturan">
+            <span>⚙️ Panel Kelola</span>
+          </a>
+        </nav>
+
+        <!-- Tombol Menu Smartphone (Tampil saat layar kecil <= 768px) -->
+        <button 
+          id="btn-toggle-menu" 
+          class="btn-menu-mobile" 
+          aria-label="Buka Menu Navigasi" 
+          aria-expanded="false"
+        >
+          ☰ Menu
+        </button>
+      </div>
+
+      <!-- Menu Dropdown Khusus Smartphone -->
+      <nav id="nav-menu-mobile" class="nav-mobile" aria-label="Navigasi Smartphone">
+        <a href="#beranda" class="nav-link-mobile">Beranda</a>
+        <a href="#tentang" class="nav-link-mobile">Tentang Usaha</a>
+        <a href="#produk" class="nav-link-mobile">Katalog Produk</a>
+        <a href="#kontak" class="nav-link-mobile">Kontak &amp; Lokasi</a>
+        <a href="admin.html" class="nav-link-mobile" style="color: var(--warna-utama); font-weight: 700;">
+          ⚙️ Buka Panel Admin (Jendela 2)
+        </a>
+      </nav>
+    </header>
+
+    <!-- ====================================================================
+         3. KONTEN UTAMA (MAIN)
+         ==================================================================== -->
+    <main>
+      <!-- ------------------------------------------------------------------
+           SEKSI 1: BERANDA (HERO SECTION)
+           Berisi label kecil, nama usaha, slogan, tombol aksi, foto utama, & 3 fakta
+           ------------------------------------------------------------------ -->
+      <section id="beranda" class="seksi-beranda">
+        <div id="seksi-beranda-publik" class="container">
+          <div class="beranda-grid">
+            <!-- Kolom Teks Pengantar Usaha -->
+            <div class="beranda-teks">
+              <span id="beranda-label-kecil" class="label-kecil">
+                Seblak Prasmanan &amp; Pedas Gurih Khas Singosari
+              </span>
+              <h2 id="beranda-judul" class="judul-beranda">Seblak UMKM</h2>
+              <p id="beranda-slogan" class="slogan-beranda">Pedasnya Pas, Gurihnya Bikin Nagih</p>
+
+              <!-- Identitas Pemilik, Berdiri, & Karyawan -->
+              <div class="info-identitas-usaha">
+                <span>Pemilik: <strong id="beranda-pemilik">Ibu Siti Aminah</strong></span>
+                <span class="pemisah">·</span>
+                <span>Berdiri: <strong id="beranda-berdiri">2021</strong></span>
+                <span class="pemisah">·</span>
+                <span>Karyawan: <strong id="beranda-karyawan">4 Orang</strong></span>
+              </div>
+
+              <!-- Tombol Aksi CTA -->
+              <div class="beranda-tombol-aksi">
+                <a 
+                  id="btn-hero-pesan-wa" 
+                  href="#" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="btn btn-wa"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.587 1.942.896 2.791.896 3.18 0 5.767-2.587 5.767-5.766.001-3.182-2.585-5.782-5.767-5.782zm0 10.354c-.818 0-1.745-.296-2.433-.704l-.174-.103-1.802.472.481-1.758-.113-.18c-.689-1.096-1.053-1.956-1.053-3.085 0-2.518 2.05-4.568 4.57-4.568 2.518 0 4.567 2.05 4.567 4.568 0 2.52-2.049 4.57-4.566 4.57z"/>
+                  </svg>
+                  <span>Pesan via WhatsApp</span>
+                </a>
+                <a href="#produk" class="btn btn-sekunder">
+                  <span>Lihat Produk 🍲</span>
+                </a>
+              </div>
+
+              <!-- 3 Fakta Singkat Usaha -->
+              <div class="fakta-singkat-grid">
+                <div class="fakta-kartu">
+                  <span class="fakta-ikon">✨</span>
+                  <p id="fakta-1">Pilihan topping prasmanan lengkap</p>
+                </div>
+                <div class="fakta-kartu">
+                  <span class="fakta-ikon">🌶️</span>
+                  <p id="fakta-2">Level pedas dan rempah cikur asli</p>
+                </div>
+                <div class="fakta-kartu">
+                  <span class="fakta-ikon">🥗</span>
+                  <p id="fakta-3">Bahan higienis dan fresh setiap hari</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kolom Foto Utama Usaha -->
+            <div class="beranda-visual">
+              <div class="gambar-utama-bingkai">
+                <img 
+                  id="beranda-foto-utama" 
+                  src="/img/foto-utama.svg" 
+                  alt="Foto Hidangan Utama Seblak UMKM Khas Singosari" 
+                  onerror="this.onerror=null; this.src='img/foto-utama.svg';"
+                />
+                <!-- Badge Penanda Kualitas -->
+                <div class="badge-pedas-hero">
+                  <span class="ikon-api">🔥</span>
+                  <div class="teks-badge">
+                    <span class="judul">Kuah Cikur Asli</span>
+                    <span class="sub">Level Pedas 0 - 5</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------------------------------------------------------------------
+           SEKSI 2: TENTANG USAHA
+           Cerita singkat usaha 2-3 kalimat & 3 keunggulan
+           ------------------------------------------------------------------ -->
+      <section id="tentang" class="seksi-tentang">
+        <div class="container">
+          <div class="judul-seksi-wrapper">
+            <span class="subjudul-seksi">Kisah &amp; Dedikasi Kami</span>
+            <h2 class="judul-seksi">Tentang Seblak UMKM</h2>
+          </div>
+
+          <!-- Cerita Singkat Usaha -->
+          <div class="tentang-card-cerita">
+            <p id="tentang-cerita-teks" class="tentang-teks-cerita">
+              Seblak UMKM lahir dari kecintaan kami pada racikan rempah kencur dan kuah pedas gurih khas nusantara. Berawal dari warung sederhana di Singosari, kami menyajikan aneka seblak prasmanan dengan bahan segar berkualitas setiap hari untuk seluruh pecinta pedas.
+            </p>
+          </div>
+
+          <!-- 3 Keunggulan Usaha -->
+          <div class="keunggulan-grid">
+            <div class="keunggulan-kartu">
+              <div class="keunggulan-nomor">1</div>
+              <h3 id="keunggulan-1" class="keunggulan-judul">Rempah Cikur Asli Berkualitas</h3>
+            </div>
+            <div class="keunggulan-kartu">
+              <div class="keunggulan-nomor">2</div>
+              <h3 id="keunggulan-2" class="keunggulan-judul">Bebas Pilih Tingkat Pedas (Level 0 - 5)</h3>
+            </div>
+            <div class="keunggulan-kartu">
+              <div class="keunggulan-nomor">3</div>
+              <h3 id="keunggulan-3" class="keunggulan-judul">Porsi Mantap &amp; Harga Ramah Kantong</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------------------------------------------------------------------
+           SEKSI 3: PRODUK (KATALOG 6 MENU SEBLAK)
+           Grid Responsif: 3 kolom di laptop, 2 di tablet, 1 di smartphone
+           ------------------------------------------------------------------ -->
+      <section id="produk" class="seksi-produk">
+        <div class="container">
+          <div class="judul-seksi-wrapper">
+            <span class="subjudul-seksi">Menu Terfavorit</span>
+            <h2 class="judul-seksi">Katalog Produk Pilihan</h2>
+          </div>
+
+          <!-- Kontainer Kartu Produk yang Diisi Otomatis oleh script.js -->
+          <div id="produk-grid-container" class="produk-grid">
+            <!-- Konten kartu produk akan di-render secara otomatis dari localStorage via JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ------------------------------------------------------------------
+           SEKSI 4: KONTAK DAN LOKASI
+           WhatsApp, alamat, tabel jam buka, medsos, dan peta Google Maps
+           ------------------------------------------------------------------ -->
+      <section id="kontak" class="seksi-kontak">
+        <div class="container">
+          <div class="judul-seksi-wrapper">
+            <span class="subjudul-seksi">Hubungi &amp; Kunjungi Kami</span>
+            <h2 class="judul-seksi">Kontak &amp; Lokasi Warung</h2>
+          </div>
+
+          <div class="kontak-grid">
+            <!-- Kolom Informasi Kontak & Jam Buka -->
+            <div class="kontak-info-card">
+              <!-- WhatsApp -->
+              <div class="kontak-item">
+                <div class="kontak-ikon">📱</div>
+                <div class="kontak-detail">
+                  <h3>Nomor WhatsApp</h3>
+                  <p><strong id="kontak-wa-tampil">0812-3456-7890</strong></p>
+                  <a 
+                    id="btn-kontak-chat-wa" 
+                    href="#" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="tautan-wa"
+                  >
+                    Chat WhatsApp Sekarang &rarr;
+                  </a>
+                </div>
+              </div>
+
+              <!-- Alamat Lengkap -->
+              <div class="kontak-item">
+                <div class="kontak-ikon">📍</div>
+                <div class="kontak-detail">
+                  <h3>Alamat Outlet / Warung</h3>
+                  <p id="kontak-alamat-teks">Jl. Raya Singosari No. 45, Singosari, Kabupaten Malang, Jawa Timur 65153</p>
+                </div>
+              </div>
+
+              <!-- Tabel Jam Operasional -->
+              <div class="kontak-item">
+                <div class="kontak-ikon">⏰</div>
+                <div class="kontak-detail" style="width: 100%;">
+                  <h3>Jam Buka Usaha</h3>
+                  <table class="tabel-jam-buka">
+                    <thead>
+                      <tr>
+                        <th>Hari</th>
+                        <th>Jam Operasional</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Setiap Hari</td>
+                        <td id="kontak-jam-buka-teks">10.00 - 21.00 WIB</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Media Sosial -->
+              <div class="kontak-item">
+                <div class="kontak-ikon">🌐</div>
+                <div class="kontak-detail">
+                  <h3>Media Sosial Resmi</h3>
+                  <div class="sosmed-wrapper">
+                    <a 
+                      id="sosmed-ig-link" 
+                      href="https://instagram.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      class="sosmed-btn"
+                    >
+                      <span>📸 Instagram:</span>
+                      <span id="sosmed-ig-teks">@seblakumkm_singosari</span>
+                    </a>
+                    <a 
+                      id="sosmed-tiktok-link" 
+                      href="https://tiktok.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      class="sosmed-btn"
+                    >
+                      <span>🎵 TikTok:</span>
+                      <span id="sosmed-tiktok-teks">@seblakumkm.singosari</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kolom Peta Lokasi Google Maps -->
+            <div class="peta-card">
+              <!-- TEMPEL KODE IFRAME GOOGLE MAPS DI SINI -->
+              <div class="peta-bingkai">
+                <div class="peta-placeholder-info">
+                  <div class="peta-pin-ikon">📍</div>
+                  <h4>Peta Lokasi Usaha Seblak UMKM</h4>
+                  <p>Outlet kami beralamat di Singosari, Malang. Klik tombol di bawah untuk petunjuk arah langsung di Google Maps.</p>
+                </div>
+              </div>
+
+              <!-- Tombol Buka di Google Maps -->
+              <div class="peta-footer">
+                <span style="font-size: 0.85rem; color: var(--warna-teks-redup);">Navigasi Akurat &amp; Cepat</span>
+                <a 
+                  id="btn-buka-google-maps" 
+                  href="https://maps.google.com/?q=Singosari+Malang" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="btn btn-utama"
+                  style="padding: 8px 18px; font-size: 0.88rem;"
+                >
+                  Buka di Google Maps 🗺️
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================================================================
+         5. FOOTER
+         ==================================================================== -->
+    <footer class="footer-utama">
+      <div class="container footer-wrapper">
+        <p class="footer-copy">
+          &copy; <span id="footer-tahun-copy">2026</span> <strong id="footer-nama-usaha">Seblak UMKM</strong> &middot; Website dibuat oleh <strong>Tim Siswa Multimedia SMK PGRI Singosari</strong>.
+        </p>
+        <!-- Tautan kecil menuju panel admin -->
+        <a href="admin.html" class="footer-tautan-admin" title="Panel Admin Pengelolaan Data">
+          <span>🔒 Masuk Panel Kelola (Admin)</span>
+        </a>
+      </div>
+    </footer>
+
+    <!-- ====================================================================
+         6. TOMBOL WHATSAPP MELAYANG (FLOATING ACTION BUTTON)
+         ==================================================================== -->
+    <a 
+      id="btn-wa-floating" 
+      href="#" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="tombol-wa-melayang" 
+      title="Hubungi Kami via WhatsApp"
+      aria-label="Chat WhatsApp Langsung"
+    >
+      <span class="label-wa-melayang">Chat Kami Yuk! 🌶️</span>
+      <div class="btn-lingkaran-wa">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.587 1.942.896 2.791.896 3.18 0 5.767-2.587 5.767-5.766.001-3.182-2.585-5.782-5.767-5.782zm0 10.354c-.818 0-1.745-.296-2.433-.704l-.174-.103-1.802.472.481-1.758-.113-.18c-.689-1.096-1.053-1.956-1.053-3.085 0-2.518 2.05-4.568 4.57-4.568 2.518 0 4.567 2.05 4.567 4.568 0 2.52-2.049 4.57-4.566 4.57z"/>
+        </svg>
+      </div>
+    </a>
+
+    <!-- Pustaka JSZip untuk Unduh File Lengkap -->
+    <script src="/jszip.min.js"></script>
+    <!-- File Logika JavaScript Murni -->
+    <script src="/script.js"></script>
+  </body>
+</html>

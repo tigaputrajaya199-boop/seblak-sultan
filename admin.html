@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel Kelola (Admin) - Seblak UMKM</title>
+    <meta name="description" content="Panel administrasi pengelolaan data profil usaha, katalog menu seblak, kontak, dan tema warna Seblak UMKM." />
+    <!-- File CSS Utama -->
+    <link rel="stylesheet" href="./style.css" />
+  <script src="/_aistudio-iframe.js?v=6634132a"></script></head>
+  <body class="admin-body">
+    <!-- Penanda Elemen Root untuk Inisialisasi Script Admin -->
+    <div id="admin-halaman-root"></div>
+
+    <!-- ====================================================================
+         1. HEADER PANEL ADMIN
+         ==================================================================== -->
+    <header class="admin-header">
+      <div class="container admin-header-flex">
+        <div class="admin-brand">
+          <img src="img/logo.svg" alt="Logo Seblak" style="width: 36px; height: 36px; border-radius: 50%;" />
+          <h1>Panel Kelola Toko</h1>
+          <span class="badge-admin">Jendela 2</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <!-- Tombol Kembali ke Website Publik (Jendela 1) -->
+          <a href="index.html" class="btn btn-sekunder" style="padding: 8px 16px; font-size: 0.85rem;" title="Buka Website Publik">
+            <span>🌐 Lihat Jendela 1 (Publik)</span>
+          </a>
+          <!-- Tombol Logout -->
+          <button id="btn-admin-logout" class="btn btn-sekunder" style="padding: 8px 16px; font-size: 0.85rem; display: none;">
+            <span>🚪 Keluar</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ====================================================================
+         2. FORMULIR LOGIN ADMIN (DENGAN PROTEKSI KATA SANDI: makansantai)
+         Tampil jika pengguna belum berhasil login
+         ==================================================================== -->
+    <div id="admin-login-wrapper" class="admin-login-wrapper">
+      <div class="admin-login-card">
+        <div class="admin-login-icon">🔒</div>
+        <h2>Masuk Panel Kelola</h2>
+        <p>Silakan masukkan kata sandi keamanan untuk mengelola isi website Seblak UMKM.</p>
+
+        <!-- Kotak Peringatan Jika Kata Sandi Salah -->
+        <div id="login-alert-bahaya" class="alert-box alert-bahaya" role="alert">
+          <!-- Pesan kesalahan diisi oleh script.js jika sandi salah -->
+        </div>
+
+        <form id="form-admin-login">
+          <div class="form-group">
+            <label for="admin-password-input">Kata Sandi Pengelola <span class="wajib">*</span></label>
+            <input 
+              type="password" 
+              id="admin-password-input" 
+              placeholder="Ketik kata sandi di sini..." 
+              autocomplete="current-password"
+              required 
+            />
+            <span class="form-help">Petunjuk siswa SMK: Kata sandi bawaan adalah <code>makansantai</code></span>
+          </div>
+          <button type="submit" class="btn btn-utama" style="width: 100%; margin-top: 10px;">
+            <span>Buka Panel Kelola &rarr;</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         3. DASHBOARD PENGATURAN ADMIN (TAMPIL SETELAH BERHASIL LOGIN)
+         ==================================================================== -->
+    <main id="admin-dashboard-wrapper" class="admin-dashboard" style="display: none;">
+      <div class="container">
+        <!-- Informasi Sinkronisasi Real-Time -->
+        <div class="sync-badge-info" style="margin-bottom: 24px;">
+          <span>⚡</span>
+          <span>
+            <strong>Sinkronisasi Dua Jendela Otomatis:</strong> Setiap perubahan yang Anda simpan di sini akan langsung memperbarui Jendela 1 (Halaman Publik) via <code>localStorage</code>.
+          </span>
+        </div>
+
+        <!-- ----------------------------------------------------------------
+             BAGIAN A: IDENTITAS USAHA, LOGO & INFO PEMILIK
+             ---------------------------------------------------------------- -->
+        <section class="admin-card-section">
+          <div class="admin-section-header">
+            <h3>🏷️ 1. Identitas Usaha, Logo &amp; Profil Toko</h3>
+            <span class="form-help">Nama toko, logo, pemilik, karyawan</span>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="input-nama-usaha">Nama Usaha / Warung <span class="wajib">*</span></label>
+              <input type="text" id="input-nama-usaha" placeholder="Contoh: Seblak UMKM" />
+            </div>
+            <!-- Pengubah Foto Logo Toko yang Mudah -->
+            <div class="form-group">
+              <label>Logo Toko</label>
+              <div class="foto-uploader-box" style="margin-top: 4px;">
+                <div class="foto-uploader-preview-wrap" style="width: 70px; min-width: 70px; height: 70px; border-radius: 50%;">
+                  <img id="preview-logo-admin" src="img/logo.svg" alt="Pratinjau Logo" class="preview-foto-admin" onerror="this.src='img/logo.svg';" />
+                </div>
+                <div class="foto-uploader-controls">
+                  <div class="uploader-buttons-row">
+                    <label for="file-logo-upload" class="btn btn-unggah-file" style="padding: 6px 12px; font-size: 0.78rem;">
+                      <span>📁 Unggah Logo dari HP/Laptop</span>
+                      <input type="file" id="file-logo-upload" accept="image/*" class="input-file-tersembunyi" />
+                    </label>
+                  </div>
+                  <details class="uploader-url-details">
+                    <summary>Atau ketik/tempel URL Logo</summary>
+                    <input type="text" id="input-logo-url" placeholder="Contoh: img/logo.svg" style="margin-top: 6px;" />
+                  </details>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="input-label-kecil">Label Kecil di Atas Judul</label>
+              <input type="text" id="input-label-kecil" placeholder="Contoh: Seblak Prasmanan & Pedas Gurih Khas Singosari" />
+            </div>
+            <div class="form-group">
+              <label for="input-slogan">Slogan Usaha</label>
+              <input type="text" id="input-slogan" placeholder="Contoh: Pedasnya Pas, Gurihnya Bikin Nagih" />
+            </div>
+          </div>
+
+          <div class="form-grid-3">
+            <div class="form-group">
+              <label for="input-pemilik">Nama Pemilik Usaha</label>
+              <input type="text" id="input-pemilik" placeholder="Contoh: Ibu Siti Aminah" />
+            </div>
+            <div class="form-group">
+              <label for="input-berdiri">Tahun Berdiri</label>
+              <input type="text" id="input-berdiri" placeholder="Contoh: 2021" />
+            </div>
+            <div class="form-group">
+              <label for="input-karyawan">Jumlah Karyawan</label>
+              <input type="text" id="input-karyawan" placeholder="Contoh: 4 Orang" />
+            </div>
+          </div>
+
+          <!-- Pengubah Foto Utama Beranda yang Mudah -->
+          <div class="form-group">
+            <label>Foto Utama Beranda (Banner Besar)</label>
+            <div class="foto-uploader-box">
+              <div class="foto-uploader-preview-wrap" style="width: 140px; min-width: 140px; height: 95px;">
+                <img id="preview-foto-utama-admin" src="img/foto-utama.svg" alt="Pratinjau Foto Utama" class="preview-foto-admin" onerror="this.src='img/foto-utama.svg';" />
+                <span class="badge-status-foto">Foto Banner</span>
+              </div>
+              <div class="foto-uploader-controls">
+                <span class="label-uploader-judul">Ganti Foto Banner Beranda:</span>
+                <div class="uploader-buttons-row">
+                  <label for="file-foto-utama-upload" class="btn btn-unggah-file">
+                    <span>📁 Pilih Foto dari Laptop / Galeri HP</span>
+                    <input type="file" id="file-foto-utama-upload" accept="image/*" class="input-file-tersembunyi" />
+                  </label>
+                </div>
+                <details class="uploader-url-details">
+                  <summary>Atau ketik/tempel URL Foto Utama</summary>
+                  <input type="text" id="input-foto-utama" placeholder="Contoh: img/foto-utama.svg" style="margin-top: 6px;" />
+                </details>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ----------------------------------------------------------------
+             BAGIAN B: PENGATURAN BANNER PROMO & TEKS CERITA
+             ---------------------------------------------------------------- -->
+        <section class="admin-card-section">
+          <div class="admin-section-header">
+            <h3>📢 2. Banner Promo &amp; Cerita Usaha</h3>
+            <span class="form-help">Pengumuman promo diskon & kisah usaha</span>
+          </div>
+
+          <div class="form-group" style="background-color: #FFF9F5; padding: 14px; border-radius: 12px; border: 1px solid var(--warna-border);">
+            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+              <input type="checkbox" id="input-tampilkan-promo" style="width: 20px; height: 20px;" />
+              <strong>Aktifkan Banner Promo / Pengumuman Teratas di Website</strong>
+            </label>
+            <div style="margin-top: 10px;">
+              <label for="input-teks-promo">Teks Promo Berjalan / Pengumuman:</label>
+              <input type="text" id="input-teks-promo" placeholder="Contoh: Promo Pelajar: Beli 2 Porsi Gratis Minuman Segar!" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="input-cerita">Cerita Tentang Usaha (2–3 Kalimat) <span class="wajib">*</span></label>
+            <textarea id="input-cerita" rows="3" placeholder="Tuliskan kisah singkat usaha seblak..."></textarea>
+          </div>
+
+          <div class="form-grid-3">
+            <div class="form-group">
+              <label for="input-fakta-1">Fakta Singkat 1</label>
+              <input type="text" id="input-fakta-1" />
+            </div>
+            <div class="form-group">
+              <label for="input-fakta-2">Fakta Singkat 2</label>
+              <input type="text" id="input-fakta-2" />
+            </div>
+            <div class="form-group">
+              <label for="input-fakta-3">Fakta Singkat 3</label>
+              <input type="text" id="input-fakta-3" />
+            </div>
+          </div>
+
+          <div class="form-grid-3">
+            <div class="form-group">
+              <label for="input-keunggulan-1">Keunggulan Usaha 1</label>
+              <input type="text" id="input-keunggulan-1" />
+            </div>
+            <div class="form-group">
+              <label for="input-keunggulan-2">Keunggulan Usaha 2</label>
+              <input type="text" id="input-keunggulan-2" />
+            </div>
+            <div class="form-group">
+              <label for="input-keunggulan-3">Keunggulan Usaha 3</label>
+              <input type="text" id="input-keunggulan-3" />
+            </div>
+          </div>
+        </section>
+
+        <!-- ----------------------------------------------------------------
+             BAGIAN C: PENGATURAN WARNA TEMA DINAMIS (:root)
+             ---------------------------------------------------------------- -->
+        <section class="admin-card-section">
+          <div class="admin-section-header">
+            <h3>🎨 3. Pengaturan Tampilan &amp; Warna Tema</h3>
+            <span class="form-help">Sesuaikan nuansa warna sesuai brand</span>
+          </div>
+
+          <!-- Preset Pilihan Cepat -->
+          <p style="font-size: 0.88rem; font-weight: 700; margin-bottom: 8px;">Pilihan Cepat Kombinasi Warna (Preset):</p>
+          <div class="palette-preset-wrapper">
+            <button type="button" class="btn-preset-warna" data-utama="#C82333" data-aksen="#E8590C" data-latar="#FFF9F5">
+              <span class="color-dot" style="background-color: #C82333;"></span>
+              <span>Merah Pedas Cabai (Default)</span>
+            </button>
+            <button type="button" class="btn-preset-warna" data-utama="#D9480F" data-aksen="#F59F00" data-latar="#FFF4E6">
+              <span class="color-dot" style="background-color: #D9480F;"></span>
+              <span>Oranye Rempah Gurih</span>
+            </button>
+            <button type="button" class="btn-preset-warna" data-utama="#A61E4D" data-aksen="#E03131" data-latar="#FFF0F6">
+              <span class="color-dot" style="background-color: #A61E4D;"></span>
+              <span>Merah Mercon Menyala</span>
+            </button>
+          </div>
+
+          <!-- Input Color Picker Kustom -->
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="input-warna-utama">Warna Utama (--warna-utama)</label>
+              <div class="color-input-box">
+                <input type="color" id="input-warna-utama" value="#C82333" />
+                <span class="form-help">Warna tombol utama, judul brand, dan aksen navigasi</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="input-warna-aksen">Warna Aksen (--warna-aksen)</label>
+              <div class="color-input-box">
+                <input type="color" id="input-warna-aksen" value="#E8590C" />
+                <span class="form-help">Warna label kecil dan hiasan oranye rempah</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="input-warna-harga">Warna Harga (--warna-harga)</label>
+              <div class="color-input-box">
+                <input type="color" id="input-warna-harga" value="#2B8A3E" />
+                <span class="form-help">Warna teks nominal harga produk</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="input-warna-latar">Warna Latar Belakang Lembut (--warna-latar)</label>
+              <div class="color-input-box">
+                <input type="color" id="input-warna-latar" value="#FFF9F5" />
+                <span class="form-help">Warna dasar lembut website profil</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ----------------------------------------------------------------
+             BAGIAN D: PENGELOLAAN KATALOG 6 PRODUK SEBLAK
+             ---------------------------------------------------------------- -->
+        <section class="admin-card-section">
+          <div class="admin-section-header">
+            <h3>🍲 4. Pengelolaan Katalog Produk (6 Menu Seblak)</h3>
+            <span class="form-help">Ubah nama, berat/porsi, harga, foto, &amp; deskripsi</span>
+          </div>
+
+          <!-- Daftar Form 6 Produk yang Digenerate oleh script.js -->
+          <div id="admin-produk-list">
+            <!-- Form produk akan dimuat di sini -->
+          </div>
+        </section>
+
+        <!-- ----------------------------------------------------------------
+             BAGIAN E: KONTAK, LOKASI, JAM BUKA & SOSIAL MEDIA
+             ---------------------------------------------------------------- -->
+        <section class="admin-card-section">
+          <div class="admin-section-header">
+            <h3>📍 5. Kontak, Jam Operasional, Media Sosial &amp; Lokasi Maps</h3>
+            <span class="form-help">WhatsApp, IG, TikTok, dan Link Google Maps</span>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="input-wa-tampil">Nomor WhatsApp Ditampilkan <span class="wajib">*</span></label>
+              <input type="text" id="input-wa-tampil" placeholder="Contoh: 0812-3456-7890" />
+            </div>
+            <div class="form-group">
+              <label for="input-wa-link">Nomor WhatsApp untuk Link Pesan (Format Internasional)</label>
+              <input type="text" id="input-wa-link" placeholder="Contoh: 6281234567890" />
+              <span class="form-help">Gunakan awalan 62 tanpa tanda + untuk tautan otomatis wa.me</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="input-alamat">Alamat Lengkap Outlet / Warung <span class="wajib">*</span></label>
+            <textarea id="input-alamat" rows="2" placeholder="Tulis alamat lengkap..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="input-jam-buka">Jam Buka Operasional</label>
+            <input type="text" id="input-jam-buka" placeholder="Contoh: Setiap hari, 10.00 - 21.00 WIB" />
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="input-ig">Akun Instagram (tulis 'tidak ada' bila tidak ada)</label>
+              <input type="text" id="input-ig" placeholder="Contoh: @seblakumkm_singosari" />
+            </div>
+            <div class="form-group">
+              <label for="input-tiktok">Akun TikTok (tulis 'tidak ada' bila tidak ada)</label>
+              <input type="text" id="input-tiktok" placeholder="Contoh: @seblakumkm.singosari" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="input-maps">Tautan Lokasi Google Maps</label>
+            <input type="text" id="input-maps" placeholder="Contoh: https://maps.google.com/?q=Singosari+Malang" />
+          </div>
+        </section>
+      </div>
+
+      <!-- Action Bar Melayang (Sticky Bottom Bar) -->
+      <div class="admin-action-bar">
+        <div class="container admin-action-flex">
+          <div style="font-size: 0.88rem; color: var(--warna-teks-redup);">
+            💡 <em>Pastikan klik <strong>Simpan Perubahan</strong> untuk menyimpan ke localStorage.</em>
+          </div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <button id="btn-admin-reset" type="button" class="btn btn-sekunder">
+              <span>🔄 Reset ke Data Awal</span>
+            </button>
+            <button id="btn-admin-simpan" type="button" class="btn btn-utama">
+              <span>💾 Simpan Perubahan</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Pustaka JSZip untuk Unduh File Lengkap -->
+    <script src="./jszip.min.js"></script>
+    <!-- File Logika JavaScript Murni -->
+    <script src="./script.js"></script>
+  </body>
+</html>
