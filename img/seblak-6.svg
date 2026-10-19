@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <rect width="600" height="450" fill="#FFF5F5" rx="16"/>
+  <!-- Bowl Emas Sultan -->
+  <ellipse cx="300" cy="275" rx="195" ry="115" fill="#D9480F" opacity="0.2"/>
+  <ellipse cx="300" cy="255" rx="185" ry="105" fill="#212529"/>
+  <ellipse cx="300" cy="250" rx="175" ry="95" fill="#C92A2A"/>
+  <!-- Topping Melimpah: Telur Rebus Utuh -->
+  <ellipse cx="250" cy="225" rx="24" ry="18" fill="#FFFFFF"/>
+  <circle cx="250" cy="225" r="11" fill="#FAB005"/>
+  <!-- Dumpling Keju -->
+  <polygon points="340,195 360,170 380,195 370,220 350,220" fill="#FFE066" stroke="#F59F00" stroke-width="2"/>
+  <!-- Jamur Enoki -->
+  <path d="M 315 220 L 315 190 M 320 220 L 324 188 M 325 220 L 332 192" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="315" cy="188" r="4" fill="#FFFFFF"/>
+  <circle cx="324" cy="186" r="4" fill="#FFFFFF"/>
+  <circle cx="332" cy="190" r="4" fill="#FFFFFF"/>
+  <!-- Suwiran Ayam & Sosis -->
+  <path d="M 270 250 Q 290 235 310 250" stroke="#FFE3E3" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <ellipse cx="360" cy="245" rx="20" ry="12" fill="#E03131"/>
+  <!-- Ceker -->
+  <path d="M 230 255 L 210 235 M 225 250 L 210 248" stroke="#F76707" stroke-width="4" stroke-linecap="round"/>
+  <!-- Kerupuk & Cabai -->
+  <circle cx="290" cy="265" r="22" fill="#FFD43B"/>
+  <circle cx="330" cy="260" r="8" fill="#E03131"/>
+  <!-- Crown Icon / Sultan Badge -->
+  <polygon points="300,165 310,180 325,168 320,185 280,185 275,168 290,180" fill="#FFD43B" stroke="#F59F00" stroke-width="1.5"/>
+  <!-- Uap -->
+  <path d="M 285 120 Q 260 85 290 55" stroke="#E03131" stroke-width="4" fill="none" opacity="0.6"/>
+  <path d="M 330 110 Q 355 80 325 50" stroke="#E03131" stroke-width="4" fill="none" opacity="0.6"/>
+  <!-- Label -->
+  <rect x="180" y="380" width="240" height="40" rx="20" fill="#C82333"/>
+  <text x="300" y="405" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle">Seblak Prasmanan Sultan</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <rect width="600" height="450" fill="#FFF4E6" rx="16"/>
+  <!-- Bowl -->
+  <ellipse cx="300" cy="270" rx="190" ry="110" fill="#E8590C" opacity="0.15"/>
+  <ellipse cx="300" cy="250" rx="180" ry="100" fill="#212529"/>
+  <ellipse cx="300" cy="245" rx="168" ry="90" fill="#D9480F"/>
+  <!-- Mie Kuning Bergelombang -->
+  <path d="M 230 230 Q 250 215 270 235 T 310 230 T 350 235 T 380 225" stroke="#FCC419" stroke-width="6" fill="none"/>
+  <path d="M 220 245 Q 245 230 270 250 T 315 245 T 360 250 T 385 240" stroke="#FAB005" stroke-width="5" fill="none"/>
+  <path d="M 240 260 Q 265 245 290 265 T 335 260 T 370 265" stroke="#FFE066" stroke-width="5" fill="none"/>
+  <!-- Telur Kocok / Serabut Telur -->
+  <ellipse cx="270" cy="220" rx="20" ry="14" fill="#FFF9DB" stroke="#F59F00" stroke-width="2"/>
+  <circle cx="270" cy="220" r="7" fill="#F59F00"/>
+  <!-- Bakso & Sosis -->
+  <circle cx="340" cy="220" r="18" fill="#ADB5BD"/>
+  <ellipse cx="310" cy="250" rx="22" ry="14" fill="#E03131"/>
+  <!-- Sawi Hijau -->
+  <path d="M 235 210 C 220 190 250 195 255 215 Z" fill="#40C057"/>
+  <!-- Uap -->
+  <path d="M 285 125 Q 265 95 295 65" stroke="#FD7E14" stroke-width="4" fill="none" opacity="0.6"/>
+  <path d="M 325 115 Q 345 85 320 55" stroke="#FD7E14" stroke-width="4" fill="none" opacity="0.6"/>
+  <!-- Label -->
+  <rect x="180" y="380" width="240" height="40" rx="20" fill="#C82333"/>
+  <text x="300" y="405" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle">Seblak Mie Kuah Pedas</text>
+</svg>

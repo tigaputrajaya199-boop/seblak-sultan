@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3E0" />
+      <stop offset="100%" stop-color="#FFE0B2" />
+    </linearGradient>
+    <linearGradient id="soupGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D32F2F" />
+      <stop offset="50%" stop-color="#E64A19" />
+      <stop offset="100%" stop-color="#C2185B" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#870000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="600" fill="url(#bgGrad)" rx="24"/>
+
+  <!-- Decorative steam lines -->
+  <path d="M 360 140 Q 340 100 370 70" stroke="#FF7043" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M 400 130 Q 430 90 400 60" stroke="#FF7043" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M 440 145 Q 470 105 435 75" stroke="#FF7043" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Large Bowl Shadow & Outer Bowl -->
+  <ellipse cx="400" cy="380" rx="270" ry="170" fill="#2E3440" opacity="0.15" filter="url(#shadow)"/>
+  <ellipse cx="400" cy="360" rx="260" ry="160" fill="#263238"/>
+  <ellipse cx="400" cy="355" rx="250" ry="150" fill="#37474F"/>
+
+  <!-- Bowl Inner Rim -->
+  <ellipse cx="400" cy="345" rx="240" ry="140" fill="#ECEFF1"/>
+
+  <!-- Spicy Soup Surface -->
+  <ellipse cx="400" cy="345" rx="225" ry="128" fill="url(#soupGrad)"/>
+
+  <!-- Chili flakes / spices -->
+  <circle cx="340" cy="310" r="4" fill="#FFEB3B"/>
+  <circle cx="450" cy="360" r="5" fill="#FFEB3B"/>
+  <circle cx="480" cy="310" r="4" fill="#FFEB3B"/>
+  <circle cx="310" cy="365" r="4" fill="#FFEB3B"/>
+  <circle cx="380" cy="380" r="5" fill="#FFEB3B"/>
+
+  <!-- Kerupuk Basah pieces -->
+  <path d="M 270 340 Q 300 310 330 330 Q 350 360 300 370 Z" fill="#FFE082" stroke="#FFB300" stroke-width="3"/>
+  <path d="M 430 320 Q 480 300 500 330 Q 480 370 440 350 Z" fill="#FFE082" stroke="#FFB300" stroke-width="3"/>
+  <path d="M 330 370 Q 370 350 390 380 Q 360 410 320 395 Z" fill="#FFE082" stroke="#FFB300" stroke-width="3"/>
+
+  <!-- Sosis slices -->
+  <g transform="translate(370, 290) rotate(15)">
+    <ellipse cx="25" cy="15" rx="28" ry="16" fill="#D32F2F" stroke="#B71C1C" stroke-width="3"/>
+    <ellipse cx="25" cy="15" rx="20" ry="10" fill="#E57373"/>
+    <line x1="15" y1="10" x2="35" y2="20" stroke="#B71C1C" stroke-width="2"/>
+    <line x1="20" y1="7" x2="30" y2="23" stroke="#B71C1C" stroke-width="2"/>
+  </g>
+  <g transform="translate(460, 340) rotate(-20)">
+    <ellipse cx="25" cy="15" rx="26" ry="15" fill="#D32F2F" stroke="#B71C1C" stroke-width="3"/>
+    <ellipse cx="25" cy="15" rx="18" ry="9" fill="#E57373"/>
+  </g>
+
+  <!-- Bakso / Meatball -->
+  <circle cx="320" cy="300" r="30" fill="#BCAAA4" stroke="#8D6E63" stroke-width="3"/>
+  <path d="M 305 290 Q 320 295 335 290" stroke="#6D4C41" stroke-width="3" fill="none"/>
+  <path d="M 308 305 Q 320 312 332 305" stroke="#6D4C41" stroke-width="3" fill="none"/>
+
+  <!-- Dumpling Keju -->
+  <polygon points="410,270 435,240 460,270 445,295 425,295" fill="#FFF59D" stroke="#FBC02D" stroke-width="3"/>
+
+  <!-- Sayur Sawi Hijau -->
+  <path d="M 400 370 C 420 340 470 380 440 410 C 410 400 390 385 400 370 Z" fill="#43A047"/>
+  <path d="M 250 330 C 240 300 280 300 285 330 Z" fill="#66BB6A"/>
+
+  <!-- Cabai Rawit Merah Garnish -->
+  <path d="M 390 310 Q 405 295 425 315 Q 410 330 390 310 Z" fill="#C62828"/>
+  <path d="M 425 315 Q 435 318 438 312" stroke="#2E7D32" stroke-width="3" fill="none"/>
+
+  <!-- Chopsticks & Spoon Accent -->
+  <line x1="530" y1="180" x2="380" y2="400" stroke="#8D6E63" stroke-width="7" stroke-linecap="round"/>
+  <line x1="560" y1="185" x2="410" y2="405" stroke="#6D4C41" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Badge banner -->
+  <rect x="230" y="490" width="340" height="48" rx="24" fill="#C82333"/>
+  <text x="400" y="522" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="bold" text-anchor="middle">Seblak UMKM Khas Singosari</text>
+</svg>

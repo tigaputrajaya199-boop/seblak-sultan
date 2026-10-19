@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <rect width="600" height="450" fill="#FFF4E6" rx="16"/>
+  <!-- Bowl -->
+  <ellipse cx="300" cy="270" rx="190" ry="110" fill="#D32F2F" opacity="0.12"/>
+  <ellipse cx="300" cy="250" rx="180" ry="100" fill="#212529"/>
+  <ellipse cx="300" cy="245" rx="168" ry="90" fill="#C92A2A"/>
+  <!-- Kerupuk & Topping -->
+  <ellipse cx="270" cy="235" rx="45" ry="30" fill="#FFE066" stroke="#FAB005" stroke-width="2"/>
+  <ellipse cx="340" cy="240" rx="50" ry="35" fill="#FFD43B" stroke="#FAB005" stroke-width="2"/>
+  <circle cx="250" cy="210" r="22" fill="#FA5252"/>
+  <circle cx="350" cy="210" r="24" fill="#ADB5BD" stroke="#868E96" stroke-width="2"/>
+  <circle cx="300" cy="260" r="20" fill="#FA5252"/>
+  <!-- Sawi -->
+  <path d="M 220 230 C 230 200 270 210 260 240 Z" fill="#40C057"/>
+  <path d="M 360 235 C 380 210 400 220 380 250 Z" fill="#2F9E44"/>
+  <!-- Uap -->
+  <path d="M 280 140 Q 260 110 290 80" stroke="#FA5252" stroke-width="4" fill="none" opacity="0.5"/>
+  <path d="M 320 130 Q 340 100 310 70" stroke="#FA5252" stroke-width="4" fill="none" opacity="0.5"/>
+  <!-- Label -->
+  <rect x="180" y="380" width="240" height="40" rx="20" fill="#C82333"/>
+  <text x="300" y="405" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle">Seblak Original Komplit</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <rect width="600" height="450" fill="#FFF0F6" rx="16"/>
+  <!-- Bowl -->
+  <ellipse cx="300" cy="270" rx="190" ry="110" fill="#C92A2A" opacity="0.15"/>
+  <ellipse cx="300" cy="250" rx="180" ry="100" fill="#2B2D42"/>
+  <ellipse cx="300" cy="245" rx="168" ry="90" fill="#D90429"/>
+  <!-- Dumpling Keju Kuning Bintang -->
+  <polygon points="300,195 320,165 345,195 335,225 310,225" fill="#FFD43B" stroke="#F59F00" stroke-width="3"/>
+  <polygon points="245,215 260,190 280,215 272,235 252,235" fill="#FFE066" stroke="#F59F00" stroke-width="2"/>
+  <!-- Chikuwa / Fish roll bergaris -->
+  <rect x="350" y="210" width="45" height="25" rx="12" fill="#FFFFFF" stroke="#FD7E14" stroke-width="3"/>
+  <line x1="365" y1="210" x2="365" y2="235" stroke="#FD7E14" stroke-width="3"/>
+  <line x1="380" y1="210" x2="380" y2="235" stroke="#FD7E14" stroke-width="3"/>
+  <!-- Udang Merah Melengkung -->
+  <path d="M 230 250 C 210 220 250 210 270 230 C 280 240 260 265 240 260 Z" fill="#FF6B6B" stroke="#FA5252" stroke-width="2"/>
+  <!-- Sawi Hijau & Kerupuk -->
+  <path d="M 320 240 C 340 220 370 240 350 260 Z" fill="#40C057"/>
+  <ellipse cx="280" cy="255" rx="30" ry="20" fill="#FFE066"/>
+  <!-- Uap -->
+  <path d="M 290 125 Q 270 95 300 65" stroke="#FA5252" stroke-width="4" fill="none" opacity="0.6"/>
+  <path d="M 330 115 Q 350 85 325 55" stroke="#FA5252" stroke-width="4" fill="none" opacity="0.6"/>
+  <!-- Label -->
+  <rect x="180" y="380" width="240" height="40" rx="20" fill="#C82333"/>
+  <text x="300" y="405" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle">Seblak Seafood Spesial</text>
+</svg>
